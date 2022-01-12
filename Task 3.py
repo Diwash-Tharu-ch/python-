@@ -35,7 +35,10 @@ def chat_box(name):
     
     num = (1,2,3,4,5,6,7,8,9,0,11)
     c = random.choice(num) # chosse random values for num
-    if c != 0:
+    if c == 0:
+        print("\n***Network Error***")
+        print("\nThanks, {}, for using PopChat. See you again soon !".format(name))
+    else:    
         while True:
             input_queries = input("--->")
             if  input_queries.capitalize() == "Exit" or  input_queries.capitalize() == "Goodbye": # this line will help to brek the loop  
@@ -53,7 +56,4 @@ def chat_box(name):
                 print(random.choice(list_1["Wifi"]))       
             else:
                 print(random.choice(list_2))    # if the word doesnot match the with the input word than it will print random value form        
-    else:
-        print("\n***Network Error***")
-        print("\nThanks, {}, for using PopChat. See you again soon !".format(name))
 mail_check()
